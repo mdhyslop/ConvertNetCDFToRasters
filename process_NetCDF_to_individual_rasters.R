@@ -52,5 +52,3 @@ ls()
 #clean up workspace - removes all objects from memory
 rm(list=ls())
 ls()
-
-
