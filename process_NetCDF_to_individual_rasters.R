@@ -26,21 +26,26 @@ nc_open(kt)
 
 #load Precip variable into a RasterBrick object
 bkt <- brick(kt, varname="Prec")
+
 #list slice names in file
 names(bkt)
-#copy names to list vector
+
 #------------------------------------------
+#copy names to list vector
 #names1<-names(bkt)
 #list names
 #names1
 #create name list without periods in it
 #names2<-chartr(".","-", names1)
 #------------------------------------------
+
 names2<-chartr(".","-", names(bkt))
 #list converted names
-names2
+# names2
+
 #export each daily raster to GeoTiff file
 writeRaster(bkt, filename=names2, bylayer=TRUE, format="GTiff", overwrite=TRUE)
+
 #list objects
 ls()
 
